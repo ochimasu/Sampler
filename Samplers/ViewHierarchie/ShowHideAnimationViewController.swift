@@ -70,6 +70,27 @@ final class ShowHideAnimationViewController: UIViewController {
         }
     }
 
+    @IBAction private func targetButtonTapped(_ sender: UIButton) {
+        statusLabel.text = "tapped"
+    }
+    @IBAction private func showTapped(_ sender: UIButton) {
+        showAnimation()
+    }
+    @IBAction private func hideTapped(_ sender: UIButton) {
+        hideAnimation()
+    }
+    @IBAction private func switchTapped(_ sender: UIButton) {
+        if hiddenStatus {
+            showAnimation()
+        } else {
+            hideAnimation()
+        }
+    }
+}
+
+// Animations
+
+extension ShowHideAnimationViewController {
     private func normalShow() {
         targetButton.isHidden = false
 
@@ -85,23 +106,6 @@ final class ShowHideAnimationViewController: UIViewController {
             if finished {
                 self.targetButton.isHidden = true
             }
-        }
-    }
-
-    @IBAction private func targetButtonTapped(_ sender: UIButton) {
-        statusLabel.text = "tapped"
-    }
-    @IBAction private func showTapped(_ sender: UIButton) {
-        showAnimation()
-    }
-    @IBAction private func hideTapped(_ sender: UIButton) {
-        hideAnimation()
-    }
-    @IBAction private func switchTapped(_ sender: UIButton) {
-        if hiddenStatus {
-            showAnimation()
-        } else {
-            hideAnimation()
         }
     }
 }

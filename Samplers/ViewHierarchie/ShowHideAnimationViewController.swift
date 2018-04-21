@@ -10,11 +10,24 @@ import UIKit
 
 class ShowHideAnimationViewController: UIViewController {
 
+    // MARK: - LifeCycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        hiddenStatus = label.isHidden
+    }
+
     // MARK: - private
 
     @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var statusLabel: UILabel!
 
-    private var hiddenStatus: Bool = false
+    private var hiddenStatus: Bool = false {
+        didSet {
+            statusLabel.text = hiddenStatus ? "hidden" : "show"
+        }
+    }
 
     // MARK: - Actions
 

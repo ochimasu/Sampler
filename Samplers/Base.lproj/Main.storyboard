@@ -71,8 +71,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQN-LJ-2FJ">
+                                <rect key="frame" x="162" y="354" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L6-PL-QaA">
-                                <rect key="frame" x="95" y="384" width="184" height="40"/>
+                                <rect key="frame" x="95" y="404" width="184" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-4i-Fpm">
                                         <rect key="frame" x="124" y="0.0" width="60" height="40"/>
@@ -125,14 +131,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="who-vD-pQg" firstAttribute="centerY" secondItem="Evv-Vv-KMs" secondAttribute="centerY" id="A9a-qf-kSq"/>
+                            <constraint firstItem="HQN-LJ-2FJ" firstAttribute="top" secondItem="who-vD-pQg" secondAttribute="bottom" constant="10" id="bAh-xE-sht"/>
                             <constraint firstItem="who-vD-pQg" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="cDO-zv-Et0"/>
                             <constraint firstItem="5L6-PL-QaA" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="e7U-BU-NCZ"/>
-                            <constraint firstItem="5L6-PL-QaA" firstAttribute="top" secondItem="who-vD-pQg" secondAttribute="bottom" constant="40" id="hfu-ac-cfa"/>
+                            <constraint firstItem="5L6-PL-QaA" firstAttribute="top" secondItem="who-vD-pQg" secondAttribute="bottom" constant="60" id="hfu-ac-cfa"/>
+                            <constraint firstItem="HQN-LJ-2FJ" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="k07-97-FvF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A4H-bi-hFJ"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="who-vD-pQg" id="nL3-nb-zHE"/>
+                        <outlet property="statusLabel" destination="HQN-LJ-2FJ" id="gGt-9Q-Oui"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Mp-3s-3X5" userLabel="First Responder" sceneMemberID="firstResponder"/>

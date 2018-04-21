@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		43A7BF29208ACF2A00735E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A7BF28208ACF2A00735E45 /* AppDelegate.swift */; };
-		43A7BF2B208ACF2A00735E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A7BF2A208ACF2A00735E45 /* ViewController.swift */; };
 		43A7BF2E208ACF2B00735E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A7BF2C208ACF2B00735E45 /* Main.storyboard */; };
 		43A7BF30208ACF2E00735E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A7BF2F208ACF2E00735E45 /* Assets.xcassets */; };
 		43A7BF33208ACF2E00735E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A7BF31208ACF2E00735E45 /* LaunchScreen.storyboard */; };
+		43A7BF3C208AD07500735E45 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A7BF3B208AD07500735E45 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43A7BF25208ACF2A00735E45 /* Samplers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samplers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A7BF28208ACF2A00735E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43A7BF2A208ACF2A00735E45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43A7BF2D208ACF2B00735E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43A7BF2F208ACF2E00735E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A7BF32208ACF2E00735E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A7BF34208ACF2E00735E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A7BF3B208AD07500735E45 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,22 @@
 		43A7BF27208ACF2A00735E45 /* Samplers */ = {
 			isa = PBXGroup;
 			children = (
+				43A7BF3A208AD01700735E45 /* ViewHierarchie */,
 				43A7BF28208ACF2A00735E45 /* AppDelegate.swift */,
-				43A7BF2A208ACF2A00735E45 /* ViewController.swift */,
 				43A7BF2C208ACF2B00735E45 /* Main.storyboard */,
 				43A7BF2F208ACF2E00735E45 /* Assets.xcassets */,
 				43A7BF31208ACF2E00735E45 /* LaunchScreen.storyboard */,
 				43A7BF34208ACF2E00735E45 /* Info.plist */,
 			);
 			path = Samplers;
+			sourceTree = "<group>";
+		};
+		43A7BF3A208AD01700735E45 /* ViewHierarchie */ = {
+			isa = PBXGroup;
+			children = (
+				43A7BF3B208AD07500735E45 /* TableViewController.swift */,
+			);
+			path = ViewHierarchie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43A7BF2B208ACF2A00735E45 /* ViewController.swift in Sources */,
 				43A7BF29208ACF2A00735E45 /* AppDelegate.swift in Sources */,
+				43A7BF3C208AD07500735E45 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2QDJ3TYVB;
 				INFOPLIST_FILE = Samplers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2QDJ3TYVB;
 				INFOPLIST_FILE = Samplers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

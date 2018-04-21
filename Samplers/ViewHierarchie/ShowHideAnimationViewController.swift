@@ -9,12 +9,47 @@
 import UIKit
 
 class ShowHideAnimationViewController: UIViewController {
+
+    // MARK: - private
+
     @IBOutlet private weak var label: UILabel!
 
-    @IBAction private func showTapped(_ sender: UIButton) {
+    private var hiddenStatus: Bool = false
+
+    // MARK: - Actions
+
+    private func showAnimation() {
+        hiddenStatus = false
+
         label.isHidden = false
+
+        UIView.animate(withDuration: 1, animations: {
+            self.label.alpha = 1
+        }, completion: nil)
+    }
+
+    private func hideAnimation() {
+        hiddenStatus = true
+
+        UIView.animate(withDuration: 1, animations: {
+            self.label.alpha = 0
+        }) { (finished) in
+            print(finished)
+            self.label.isHidden = true
+        }
+    }
+
+    @IBAction private func showTapped(_ sender: UIButton) {
+        showAnimation()
     }
     @IBAction private func hideTapped(_ sender: UIButton) {
-        label.isHidden = true
+        hideAnimation()
+    }
+    @IBAction private func switchTapped(_ sender: UIButton) {
+        if hiddenStatus {
+            showAnimation()
+        } else {
+            hideAnimation()
+        }
     }
 }

@@ -72,10 +72,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L6-PL-QaA">
-                                <rect key="frame" x="102" y="384" width="170" height="40"/>
+                                <rect key="frame" x="95" y="384" width="184" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-4i-Fpm">
-                                        <rect key="frame" x="110" y="0.0" width="60" height="40"/>
+                                        <rect key="frame" x="124" y="0.0" width="60" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0vB-p2-E5I"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="kfb-fN-NK0"/>
@@ -83,6 +83,16 @@
                                         <state key="normal" title="Show"/>
                                         <connections>
                                             <action selector="showTapped:" destination="D9W-di-h6u" eventType="touchUpInside" id="Gjb-ss-bix"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1a-Rd-xpu">
+                                        <rect key="frame" x="62" y="0.0" width="60" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="cHX-xx-8T5"/>
+                                        </constraints>
+                                        <state key="normal" title="Switch"/>
+                                        <connections>
+                                            <action selector="switchTapped:" destination="D9W-di-h6u" eventType="touchUpInside" id="yoJ-sm-AHw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-IJ-g2P">
@@ -101,8 +111,11 @@
                                 <constraints>
                                     <constraint firstItem="dkt-4i-Fpm" firstAttribute="top" secondItem="5L6-PL-QaA" secondAttribute="top" id="DSw-y3-ORW"/>
                                     <constraint firstAttribute="bottom" secondItem="0Y5-IJ-g2P" secondAttribute="bottom" id="EH3-CG-zLp"/>
-                                    <constraint firstItem="dkt-4i-Fpm" firstAttribute="leading" secondItem="0Y5-IJ-g2P" secondAttribute="trailing" constant="50" id="R8z-vK-srg"/>
                                     <constraint firstItem="0Y5-IJ-g2P" firstAttribute="leading" secondItem="5L6-PL-QaA" secondAttribute="leading" id="RZK-0n-y6Q"/>
+                                    <constraint firstItem="X1a-Rd-xpu" firstAttribute="leading" secondItem="0Y5-IJ-g2P" secondAttribute="trailing" constant="2" id="TtP-gL-BOQ"/>
+                                    <constraint firstItem="X1a-Rd-xpu" firstAttribute="top" secondItem="5L6-PL-QaA" secondAttribute="top" id="WEu-x8-Frx"/>
+                                    <constraint firstItem="dkt-4i-Fpm" firstAttribute="leading" secondItem="X1a-Rd-xpu" secondAttribute="trailing" constant="2" id="WHi-3b-G2E"/>
+                                    <constraint firstAttribute="bottom" secondItem="X1a-Rd-xpu" secondAttribute="bottom" id="iPm-aS-up9"/>
                                     <constraint firstAttribute="bottom" secondItem="dkt-4i-Fpm" secondAttribute="bottom" id="kLb-8l-jCf"/>
                                     <constraint firstAttribute="trailing" secondItem="dkt-4i-Fpm" secondAttribute="trailing" id="mTT-wf-tXZ"/>
                                     <constraint firstItem="0Y5-IJ-g2P" firstAttribute="top" secondItem="5L6-PL-QaA" secondAttribute="top" id="wVG-PJ-KAa"/>

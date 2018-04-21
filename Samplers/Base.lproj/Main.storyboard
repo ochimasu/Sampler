@@ -128,11 +128,20 @@
                                     <constraint firstItem="0Y5-IJ-g2P" firstAttribute="top" secondItem="5L6-PL-QaA" secondAttribute="top" id="wVG-PJ-KAa"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yre-Gt-lZL">
+                                <rect key="frame" x="127" y="468" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HQN-LJ-2FJ" firstAttribute="top" secondItem="DUZ-Qg-GPm" secondAttribute="bottom" constant="10" id="Hto-Mh-N5b"/>
+                            <constraint firstItem="yre-Gt-lZL" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="LBC-Ar-RIE"/>
                             <constraint firstItem="5L6-PL-QaA" firstAttribute="top" secondItem="DUZ-Qg-GPm" secondAttribute="bottom" constant="60" id="NDE-u3-bOd"/>
+                            <constraint firstItem="yre-Gt-lZL" firstAttribute="top" secondItem="5L6-PL-QaA" secondAttribute="bottom" constant="20" id="dBp-v4-e5U"/>
                             <constraint firstItem="5L6-PL-QaA" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="e7U-BU-NCZ"/>
                             <constraint firstItem="HQN-LJ-2FJ" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="k07-97-FvF"/>
                             <constraint firstItem="DUZ-Qg-GPm" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="piD-dF-1aL"/>
@@ -141,6 +150,7 @@
                         <viewLayoutGuide key="safeArea" id="A4H-bi-hFJ"/>
                     </view>
                     <connections>
+                        <outlet property="animationSegment" destination="yre-Gt-lZL" id="kf6-s2-S7a"/>
                         <outlet property="statusLabel" destination="HQN-LJ-2FJ" id="gGt-9Q-Oui"/>
                         <outlet property="targetButton" destination="DUZ-Qg-GPm" id="3Ud-rW-b9s"/>
                     </connections>

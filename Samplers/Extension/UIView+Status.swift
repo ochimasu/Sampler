@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    func setHiddenMatchAlpha() {
+    func setHiddenAsAlpha() {
         isHidden = alpha.isZero
     }
 }

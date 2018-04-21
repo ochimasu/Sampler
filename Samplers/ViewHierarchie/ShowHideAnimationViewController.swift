@@ -48,7 +48,7 @@ class ShowHideAnimationViewController: UIViewController {
             self.targetButton.alpha = 0
         }) { (finished) in
             print(finished)
-            self.targetButton.setHiddenMatchAlpha()
+            self.targetButton.setHiddenAsAlpha()
         }
     }
 

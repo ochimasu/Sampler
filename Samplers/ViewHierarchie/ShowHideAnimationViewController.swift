@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowHideAnimationViewController: UIViewController {
+final class ShowHideAnimationViewController: UIViewController {
 
     private enum AnimationType: Int {
         case normal = 0

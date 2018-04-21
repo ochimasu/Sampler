@@ -29,6 +29,6 @@ class TableViewController: UITableViewController {
     // MARK: - UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        performSegue(withIdentifier: "ShowHide", sender: self)
     }
 }

@@ -12,10 +12,12 @@ final class ShowHideAnimationViewController: UIViewController {
 
     private enum AnimationType: Int {
         case normal = 0
+        case scale_keyframe
 
         func name() -> String {
             switch self {
             case .normal: return "normal"
+            case .scale_keyframe: return "scale(keyframe)"
             }
         }
     }
@@ -34,9 +36,12 @@ final class ShowHideAnimationViewController: UIViewController {
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var animationSegment: UISegmentedControl! {
         didSet {
+            let types: [AnimationType] = [.normal, .scale_keyframe]
+
             animationSegment.removeAllSegments()
-            let type = AnimationType.normal
-            animationSegment.insertSegment(withTitle: type.name(), at: type.rawValue, animated: false)
+            types.forEach {
+                animationSegment.insertSegment(withTitle: $0.name(), at: $0.rawValue, animated: false)
+            }
 
             animationSegment.selectedSegmentIndex = AnimationType.normal.rawValue
         }
@@ -55,8 +60,8 @@ final class ShowHideAnimationViewController: UIViewController {
         hiddenStatus = false
 
         switch AnimationType(rawValue: animationSegment.selectedSegmentIndex)! {
-        case .normal:
-            normalShow()
+        case .normal: normalShow()
+        case .scale_keyframe: scaleShow()
         }
     }
 
@@ -65,8 +70,8 @@ final class ShowHideAnimationViewController: UIViewController {
         hiddenStatus = true
 
         switch AnimationType(rawValue: animationSegment.selectedSegmentIndex)! {
-        case .normal:
-            normalHide()
+        case .normal: normalHide()
+        case .scale_keyframe: scaleHide()
         }
     }
 
@@ -104,6 +109,48 @@ extension ShowHideAnimationViewController {
             self.targetButton.alpha = 0
         }) { (finished) in
             if finished {
+                // alpha値が 0.01未満ではどのみちタッチイベントは無視されるのであまり関係ない
+                self.targetButton.isHidden = true
+            }
+        }
+    }
+
+    private func scaleShow() {
+        let targetView = targetButton!
+        targetView.isHidden = false
+
+        let lenearAnimation = UIViewKeyframeAnimationOptions(rawValue: UIViewAnimationOptions.curveLinear.rawValue)
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.beginFromCurrentState, lenearAnimation], animations: {
+            let animationRate: Double = 1/2
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: animationRate, animations: {
+                targetView.transform = CGAffineTransform.init(scaleX: 1.1, y: 1.1)
+                targetView.alpha = 1
+            })
+            UIView.addKeyframe(withRelativeStartTime: animationRate, relativeDuration: 1, animations: {
+                targetView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+            })
+        }, completion: nil)
+    }
+
+    private func scaleHide() {
+        let targetView = targetButton!
+
+        // UIView.animateの completionで繋ぐ場合、[.beginFromCurrentState]が上手く働かず、completionでの finishedも正しく取れない為、animateKeyFrames)()を使う
+        // KeyFramesでは、animationCurveの指定は可能だが、全体を通してしか指定出来ない
+        let lenearAnimation = UIViewKeyframeAnimationOptions(rawValue: UIViewAnimationOptions.curveLinear.rawValue)
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.beginFromCurrentState, lenearAnimation], animations: {
+            let animationRate: Double = 1/2
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: animationRate, animations: {
+                targetView.transform = CGAffineTransform.init(scaleX: 1.1, y: 1.1)
+            })
+            UIView.addKeyframe(withRelativeStartTime: animationRate, relativeDuration: 1, animations: {
+                targetView.transform = CGAffineTransform.init(scaleX: 0.7, y: 0.7)
+                targetView.alpha = 0
+            })
+        }) { (finished) in
+            print(finished)
+            if finished {
+                // alpha値が 0.01未満ではどにみちタッチイベントは無視されるのであまり関係ない
                 self.targetButton.isHidden = true
             }
         }

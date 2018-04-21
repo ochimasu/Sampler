@@ -15,12 +15,12 @@ class ShowHideAnimationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        hiddenStatus = label.isHidden
+        hiddenStatus = targetButton.isHidden
     }
 
     // MARK: - private
 
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var targetButton: UIButton!
     @IBOutlet private weak var statusLabel: UILabel!
 
     private var hiddenStatus: Bool = false {
@@ -34,10 +34,10 @@ class ShowHideAnimationViewController: UIViewController {
     private func showAnimation() {
         hiddenStatus = false
 
-        label.isHidden = false
+        targetButton.isHidden = false
 
         UIView.animate(withDuration: 1, animations: {
-            self.label.alpha = 1
+            self.targetButton.alpha = 1
         }, completion: nil)
     }
 
@@ -45,13 +45,16 @@ class ShowHideAnimationViewController: UIViewController {
         hiddenStatus = true
 
         UIView.animate(withDuration: 1, animations: {
-            self.label.alpha = 0
+            self.targetButton.alpha = 0
         }) { (finished) in
             print(finished)
-            self.label.isHidden = true
+            self.targetButton.setHiddenMatchAlpha()
         }
     }
 
+    @IBAction private func targetButtonTapped(_ sender: UIButton) {
+        statusLabel.text = "tapped"
+    }
     @IBAction private func showTapped(_ sender: UIButton) {
         showAnimation()
     }

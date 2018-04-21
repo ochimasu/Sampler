@@ -65,20 +65,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="who-vD-pQg">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUZ-Qg-GPm">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="targetButtonTapped:" destination="D9W-di-h6u" eventType="touchUpInside" id="QRw-HP-Knr"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQN-LJ-2FJ">
-                                <rect key="frame" x="162" y="354" width="50" height="21"/>
+                                <rect key="frame" x="162" y="358" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L6-PL-QaA">
-                                <rect key="frame" x="95" y="404" width="184" height="40"/>
+                                <rect key="frame" x="95" y="408" width="184" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-4i-Fpm">
                                         <rect key="frame" x="124" y="0.0" width="60" height="40"/>
@@ -130,18 +131,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="who-vD-pQg" firstAttribute="centerY" secondItem="Evv-Vv-KMs" secondAttribute="centerY" id="A9a-qf-kSq"/>
-                            <constraint firstItem="HQN-LJ-2FJ" firstAttribute="top" secondItem="who-vD-pQg" secondAttribute="bottom" constant="10" id="bAh-xE-sht"/>
-                            <constraint firstItem="who-vD-pQg" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="cDO-zv-Et0"/>
+                            <constraint firstItem="HQN-LJ-2FJ" firstAttribute="top" secondItem="DUZ-Qg-GPm" secondAttribute="bottom" constant="10" id="Hto-Mh-N5b"/>
+                            <constraint firstItem="5L6-PL-QaA" firstAttribute="top" secondItem="DUZ-Qg-GPm" secondAttribute="bottom" constant="60" id="NDE-u3-bOd"/>
                             <constraint firstItem="5L6-PL-QaA" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="e7U-BU-NCZ"/>
-                            <constraint firstItem="5L6-PL-QaA" firstAttribute="top" secondItem="who-vD-pQg" secondAttribute="bottom" constant="60" id="hfu-ac-cfa"/>
                             <constraint firstItem="HQN-LJ-2FJ" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="k07-97-FvF"/>
+                            <constraint firstItem="DUZ-Qg-GPm" firstAttribute="centerX" secondItem="Evv-Vv-KMs" secondAttribute="centerX" id="piD-dF-1aL"/>
+                            <constraint firstItem="DUZ-Qg-GPm" firstAttribute="centerY" secondItem="Evv-Vv-KMs" secondAttribute="centerY" id="vrq-gn-23V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A4H-bi-hFJ"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="who-vD-pQg" id="nL3-nb-zHE"/>
                         <outlet property="statusLabel" destination="HQN-LJ-2FJ" id="gGt-9Q-Oui"/>
+                        <outlet property="targetButton" destination="DUZ-Qg-GPm" id="3Ud-rW-b9s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Mp-3s-3X5" userLabel="First Responder" sceneMemberID="firstResponder"/>

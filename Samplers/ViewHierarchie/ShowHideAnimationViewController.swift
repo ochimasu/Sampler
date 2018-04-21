@@ -32,6 +32,7 @@ class ShowHideAnimationViewController: UIViewController {
     // MARK: - Actions
 
     private func showAnimation() {
+        guard hiddenStatus else { return }
         hiddenStatus = false
 
         targetButton.isHidden = false
@@ -42,6 +43,7 @@ class ShowHideAnimationViewController: UIViewController {
     }
 
     private func hideAnimation() {
+        guard !hiddenStatus else { return }
         hiddenStatus = true
 
         UIView.animate(withDuration: 1, delay: 0, options: [.beginFromCurrentState], animations: {

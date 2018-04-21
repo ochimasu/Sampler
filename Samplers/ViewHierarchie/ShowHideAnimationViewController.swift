@@ -36,7 +36,7 @@ class ShowHideAnimationViewController: UIViewController {
 
         targetButton.isHidden = false
 
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: [.beginFromCurrentState], animations: {
             self.targetButton.alpha = 1
         }, completion: nil)
     }
@@ -44,11 +44,12 @@ class ShowHideAnimationViewController: UIViewController {
     private func hideAnimation() {
         hiddenStatus = true
 
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: [.beginFromCurrentState], animations: {
             self.targetButton.alpha = 0
         }) { (finished) in
-            print(finished)
-            self.targetButton.setHiddenAsAlpha()
+            if finished {
+                self.targetButton.isHidden = true
+            }
         }
     }
 

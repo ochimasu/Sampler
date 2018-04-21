@@ -13,7 +13,6 @@
 		43A7BF33208ACF2E00735E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A7BF31208ACF2E00735E45 /* LaunchScreen.storyboard */; };
 		43A7BF3C208AD07500735E45 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A7BF3B208AD07500735E45 /* TableViewController.swift */; };
 		43CB8C70208ADE740075A2F0 /* ShowHideAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB8C6F208ADE740075A2F0 /* ShowHideAnimationViewController.swift */; };
-		43CB8C73208AF36F0075A2F0 /* UIView+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB8C72208AF36F0075A2F0 /* UIView+Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		43A7BF34208ACF2E00735E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A7BF3B208AD07500735E45 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		43CB8C6F208ADE740075A2F0 /* ShowHideAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHideAnimationViewController.swift; sourceTree = "<group>"; };
-		43CB8C72208AF36F0075A2F0 /* UIView+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Status.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 		43CB8C71208AF2FB0075A2F0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				43CB8C72208AF36F0075A2F0 /* UIView+Status.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -159,7 +156,6 @@
 			files = (
 				43CB8C70208ADE740075A2F0 /* ShowHideAnimationViewController.swift in Sources */,
 				43A7BF29208ACF2A00735E45 /* AppDelegate.swift in Sources */,
-				43CB8C73208AF36F0075A2F0 /* UIView+Status.swift in Sources */,
 				43A7BF3C208AD07500735E45 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
